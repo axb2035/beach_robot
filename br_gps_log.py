@@ -1,9 +1,9 @@
 import serial
 import time
 import string
-import pynmea2
-import time
 import os
+
+import pynmea2
 
 folder_path = '/home/pi/Documents/BeachCaptures' + time.strftime("%Y%m%d")
 
@@ -27,7 +27,6 @@ while True:
         lat = newmsg.latitude
         lng = newmsg.longitude
         gps = "Longitude: " + str(lng) + " Latitude: " + str(lat) + ' Time: ' + log_time
-        print(gps)
         f.write(str(lng) + ',' + str(lat) + ',' + log_time)
         f.write('\n')
         f.close()
